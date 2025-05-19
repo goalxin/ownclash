@@ -1,4 +1,11 @@
 # 代理列表
+# 自行添加
+DOMAIN-SUFFIX,haijiao.com
+DOMAIN-SUFFIX,haijiaos.xyz
+DOMAIN-SUFFIX,stripchatgirls.com
+DOMAIN-SUFFIX,jubt.fun
+DOMAIN-SUFFIX,timemaya.com
+
 
 # MyList && Other
 DOMAIN-SUFFIX,1password.com
@@ -360,7 +367,7 @@ DOMAIN-SUFFIX,storage.live.com
 DOMAIN-SUFFIX,storage.msn.com
 #DOMAIN-SUFFIX,aria.microsoft.com
 
-# Porn
+# Porn 
 DOMAIN-KEYWORD,haijiao
 DOMAIN-KEYWORD,porn
 DOMAIN-SUFFIX,8teenxxx.com
