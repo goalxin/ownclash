@@ -1,3 +1,6 @@
+#一些赌博网站，适当屏蔽列表
+
+
 DOMAIN-SUFFIX,beer555.com
 DOMAIN-SUFFIX,tek789.com
 DOMAIN-SUFFIX,beer777.com
@@ -7,3 +10,7 @@ DOMAIN-SUFFIX,sbogogo.com
 DOMAIN-SUFFIX,u16888.com
 DOMAIN-SUFFIX,potato777.com
 DOMAIN-SUFFIX,sbobet.com
+DOMAIN-SUFFIX,isn99.com
+DOMAIN-SUFFIX,isn88.com
+DOMAIN-SUFFIX,whiskey1368.com
+DOMAIN-SUFFIX,ps3838.com
