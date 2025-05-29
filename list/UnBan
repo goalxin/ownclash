@@ -30,7 +30,9 @@ DOMAIN,msg.umengcloud.com
 
 # Miui 小米
 DOMAIN,tracking.miui.com
-DOMAIN,miwifi.com
+DOMAIN,www.miwifi.com
+DOMAIN,api.miwifi.com
+DOMAIN,bigota.miwifi.com
 
 # General
 DOMAIN,app.adjust.com
