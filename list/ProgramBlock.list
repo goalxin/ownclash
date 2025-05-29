@@ -1,10 +1,6 @@
 # 包含常用应用的各种去广告规则。
 # 可能有轻微副作用，可放心使用。（如果网站功能和广告冲突，会删掉去广告规则）
-#Adobe盗版
-DOMAIN-SUFFIX,adobe.com
-DOMAIN-SUFFIX,adobedtm.com
-DOMAIN-SUFFIX,adobe.io
-DOMAIN-SUFFIX,omtrdc.net
+
 
 # 163
 DOMAIN-SUFFIX,a.youdao.com
@@ -124,26 +120,7 @@ DOMAIN-SUFFIX,tyh.taobao.com
 DOMAIN-SUFFIX,userimg.qunar.com
 DOMAIN-SUFFIX,yiliao.hupan.com
 
-# Adobe
-DOMAIN-SUFFIX,3dns-2.adobe.com
-DOMAIN-SUFFIX,3dns-3.adobe.com
-DOMAIN-SUFFIX,activate-sea.adobe.com
-DOMAIN-SUFFIX,activate-sjc0.adobe.com
-DOMAIN-SUFFIX,activate.adobe.com
-DOMAIN-SUFFIX,adobe-dns-2.adobe.com
-DOMAIN-SUFFIX,adobe-dns-3.adobe.com
-DOMAIN-SUFFIX,adobe-dns.adobe.com
-DOMAIN-SUFFIX,ereg.adobe.com
-DOMAIN-SUFFIX,geo2.adobe.com
-DOMAIN-SUFFIX,hl2rcv.adobe.com
-DOMAIN-SUFFIX,hlrcv.stage.adobe.com
-DOMAIN-SUFFIX,lm.licenses.adobe.com
-DOMAIN-SUFFIX,lmlicenses.wip4.adobe.com
-DOMAIN-SUFFIX,na1r.services.adobe.com
-DOMAIN-SUFFIX,na2m-pr.licenses.adobe.com
-DOMAIN-SUFFIX,practivate.adobe.com
-DOMAIN-SUFFIX,wip3.adobe.com
-DOMAIN-SUFFIX,wwis-dubc1-vip60.adobe.com
+
 
 # Apple
 DOMAIN-SUFFIX,adserver.unityads.unity3d.com
