@@ -7,6 +7,8 @@ DOMAIN-SUFFIX,turtle-wow.org
 # Epicgames
 DOMAIN-SUFFIX,ol.epicgames.com
 
+# 亚马逊插件
+DOMAIN-SUFFIX,junglescout.com
 
 # Getui
 DOMAIN-SUFFIX,dizhensubao.getui.com
