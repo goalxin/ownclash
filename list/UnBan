@@ -6,6 +6,7 @@ IP-CIDR,80.189.29.157/32,no-resolve
 IP-CIDR,185.187.169.211/32,no-resolve
 IP-CIDR,169.150.222.245/32,no-resolve
 IP-CIDR,185.132.178.224/32,no-resolve
+IP-CIDR,169.150.222.223/32,no-resolve
 
 
 # Epicgames
