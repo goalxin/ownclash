@@ -1,7 +1,12 @@
 # Unbreak 白名单 不应该被广告链接的网站
 
+# 游戏乌龟服务器
+DOMAIN-SUFFIX,turtle-wow.org
+
+
 # Epicgames
 DOMAIN-SUFFIX,ol.epicgames.com
+
 
 # Getui
 DOMAIN-SUFFIX,dizhensubao.getui.com
