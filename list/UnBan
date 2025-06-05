@@ -2,6 +2,8 @@
 
 # 游戏乌龟服务器
 DOMAIN-SUFFIX,turtle-wow.org
+IP-CIDR,80.189.29.157/32,no-resolve
+IP-CIDR,185.187.169.211/32,no-resolve
 
 
 # Epicgames
