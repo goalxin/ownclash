@@ -9,7 +9,7 @@ IP-CIDR,185.132.178.224/32,no-resolve
 IP-CIDR,169.150.222.223/32,no-resolve
 IP-CIDR,185.203.56.54/32,no-resolve
 
-
+DOMAIN-SUFFIX,unpkg.com
 # Epicgames
 DOMAIN-SUFFIX,ol.epicgames.com
 
