@@ -6,7 +6,7 @@
 ;苹果分流：支持
 ;增强中国IP段：不支持
 ;增强国外GFW：不支持
-;带两个负载均衡
+;增强两个负载均衡   20251206
 ruleset=👽 AI,https://raw.githubusercontent.com/goalxin/ownclash/refs/heads/main/list/AI.list
 ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
 ruleset=🎯 全球直连,https://raw.githubusercontent.com/goalxin/ownclash/refs/heads/main/list/UnBan
@@ -40,9 +40,9 @@ custom_proxy_group=🚀 节点选择`select`[]DIRECT`[]手动-负载均衡`[]自
 custom_proxy_group=🐟 漏网之鱼`select`[]DIRECT`[]手动-负载均衡`[]自动-负载均衡`[]所有-自动`[]ION-自动`[]港台日新韩-自动`[]RN-自动`[]CC-自动`[]台日新韩-自动`[]香港-自动`[]台湾-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]其他-自动`[]REJECT
 
 ;所有-负载均衡（手动5个节点和自动3节点）
-custom_proxy_group=手动-负载均衡`load-balance`[]所有-负载1`[]所有-负载2`[]所有-负载3`[]所有-负载4`[]所有-负载5
-custom_proxy_group=自动-负载均衡`load-balance`[]ION-自动`[]RN-自动`[]CC-自动
 
+custom_proxy_group=手动-负载均衡`load-balance`include-all-proxies=true`[]所有-负载1`[]所有-负载2`[]所有-负载3`[]所有-负载4`[]所有-负载5`http://www.gstatic.com/generate_204`50
+custom_proxy_group=自动-负载均衡`load-balance`include-all-proxies=true`[]ION-自动`[]RN-自动`[]CC-自动`http://www.gstatic.com/generate_204`50
 ;3、节点组
 custom_proxy_group=所有-负载1`select`.*
 custom_proxy_group=所有-负载2`select`.*
