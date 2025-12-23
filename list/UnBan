@@ -12,6 +12,8 @@ IP-CIDR,185.203.56.54/32,no-resolve
 DOMAIN-SUFFIX,unpkg.com
 # Epicgames
 DOMAIN-SUFFIX,ol.epicgames.com
+# 化龙巷
+DOMAIN-SUFFIX,hualongxiang.com
 
 # 亚马逊插件
 DOMAIN-SUFFIX,junglescout.com
