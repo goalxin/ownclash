@@ -45,6 +45,7 @@ DOMAIN,msg.umengcloud.com
 
 # Miui 小米
 DOMAIN,tracking.miui.com
+DOMAIN-SUFFIX,mi.com
 DOMAIN,www.miwifi.com
 DOMAIN,api.miwifi.com
 DOMAIN,bigota.miwifi.com
