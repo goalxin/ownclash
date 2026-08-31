@@ -1,6 +1,32 @@
+# === Gemini 关键字匹配 ===
+DOMAIN-KEYWORD,gemini
+
+# === Gemini Web / App / 官方页面 ===
 DOMAIN-SUFFIX,gemini.google.com
 DOMAIN-SUFFIX,bard.google.com
-DOMAIN-SUFFIX,googleapis.com
-DOMAIN-SUFFIX,googleapis.cn
+DOMAIN-SUFFIX,deepmind.com
+DOMAIN-SUFFIX,deepmind.google
+DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,generative-ai.google
+
+# === Google AI Studio / API / 开发者平台 ===
+DOMAIN-SUFFIX,aistudio.google.com
+DOMAIN-SUFFIX,makersuite.google.com
+DOMAIN-SUFFIX,ai.google.dev
+DOMAIN,generativelanguage.googleapis.com
+DOMAIN,aiplatform.googleapis.com
+
+# === Gemini 核心后端 & 实时通信 (Live / 多模态) ===
+DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+DOMAIN-SUFFIX,alkalimakersuite-pa.googleapis.com
+DOMAIN-SUFFIX,alkalicognition-pa.googleapis.com
+DOMAIN-SUFFIX,alkalienterprise-pa.googleapis.com
+
+# === 区域检测与上下文验证 (防 Unsupported Country) ===
+DOMAIN,content-georouting.googleapis.com
+DOMAIN,geller-pa.googleapis.com
+DOMAIN,waa-pa.clients6.google.com
+
+# === 静态资源与生成图片加载 (可选但建议保留) ===
 DOMAIN-SUFFIX,gstatic.com
-DOMAIN-SUFFIX,signalr.net
+DOMAIN-SUFFIX,googleusercontent.com
