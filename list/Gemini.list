@@ -30,3 +30,8 @@ DOMAIN,waa-pa.clients6.google.com
 # === 静态资源与生成图片加载 (可选但建议保留) ===
 DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,googleusercontent.com
+# === 手机APP专用测试 ===
+DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,clients6.google.com
+DOMAIN-SUFFIX,gstatic.com
+DOMAIN-SUFFIX,googleusercontent.com
