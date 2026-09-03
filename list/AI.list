@@ -43,3 +43,6 @@ DOMAIN-SUFFIX,meta.ai
 DOMAIN-SUFFIX,metademolab.com
 DOMAIN-SUFFIX,perplexity.ai
 
+
+# 加入强制走代理的个人域名
+
