@@ -46,3 +46,25 @@ DOMAIN-SUFFIX,perplexity.ai
 
 # 加入强制走代理的个人域名
 
+# 自行添加
+DOMAIN-SUFFIX,haijiao.com
+DOMAIN-SUFFIX,haijiaos.xyz
+DOMAIN-SUFFIX,stripchatgirls.com
+DOMAIN-SUFFIX,jubt.fun
+DOMAIN-SUFFIX,timemaya.com
+DOMAIN-SUFFIX,hjpfe1.com
+DOMAIN-SUFFIX,tkgxfc.top
+
+# Wikipedia 维基相关域名
+DOMAIN-SUFFIX,mediawiki.org
+DOMAIN-SUFFIX,wikibooks.org
+DOMAIN-SUFFIX,wikidata.org
+DOMAIN-SUFFIX,wikileaks.org
+DOMAIN-SUFFIX,wikimedia.org
+DOMAIN-SUFFIX,wikinews.org
+DOMAIN-SUFFIX,wikipedia.org
+DOMAIN-SUFFIX,wikiquote.org
+DOMAIN-SUFFIX,wikisource.org
+DOMAIN-SUFFIX,wikiversity.org
+DOMAIN-SUFFIX,wikivoyage.org
+DOMAIN-SUFFIX,wiktionary.org
