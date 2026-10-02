@@ -70,7 +70,7 @@ custom_proxy_group=指定负载A`select`.*
 custom_proxy_group=指定负载B`select`.*
 
 ; 原有的自动负载均衡组
-custom_proxy_group=自动-负载均衡`load-balance`(ion|ION|CF|电信|优选|cc|ccla|CC|CCLA|ll|LL)`http://www.gstatic.com/generate_204`180,50
+custom_proxy_group=自动-负载均衡`url-test`(ion|ION|CF|电信|优选|cc|ccla|CC|CCLA|ll|LL)`http://www.gstatic.com/generate_204`180,50
 
 ; ================= 4. 15个独立手动选择池 =================
 ; 供【负载-并发轮询】使用 (1-5)
