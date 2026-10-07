@@ -8,6 +8,9 @@ DOMAIN-SUFFIX,timemaya.com
 DOMAIN-SUFFIX,hjpfe1.com
 DOMAIN-SUFFIX,tkgxfc.top
 
+# Wikipedia 走确定代理
+DOMAIN-SUFFIX,digvps.com
+
 # Wikipedia 维基相关域名
 DOMAIN-SUFFIX,mediawiki.org
 DOMAIN-SUFFIX,wikibooks.org
