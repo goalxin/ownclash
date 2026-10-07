@@ -1,43 +1,46 @@
-;acl4SSR规则-在线更新版
+;acl4SSR规则-极客进阶定制版
 ;去广告：支持
 ;自动测速：支持
 ;微软分流：支持
 ;苹果分流：支持
-;增强中国IP段：支持 (已强化 ChinaMedia 与 ChinaIp)
-;增强国外GFW：不支持
-;增强手动负载/优选组：支持 (CF-哈希负载 / 负载-并发轮询 1-5 / 负载-目标哈希 6-10 / 负载-会话保持 11-15 / 指定负载A / 指定负载B)
+;增强中国IP段：支持 (全量IP + 影音特例)
+;增强国外GFW：支持 (接入 GFWList 精准分流)
+;增强负载架构：支持 (CF-哈希负载 / 负载-并发轮询 1-5 / 负载-目标哈希 6-10 / 负载-会话保持 11-15 / 指定负载A / 指定负载B)
 
 # === 1. 广告与净化拦截（最高优先级）===
 ruleset=🛑 全球拦截,https://raw.githubusercontent.com/goalxin/ownclash/refs/heads/main/list/BanAD
 ruleset=🍃 应用净化,https://raw.githubusercontent.com/goalxin/ownclash/refs/heads/main/list/ProgramBlock.list
 
-# === 2. 本地局域网与放行 ===
+# === 2. 本地局域网与无条件放行 ===
 ruleset=🎯 全球直连,https://raw.githubusercontent.com/goalxin/ownclash/refs/heads/main/list/UnBan
 ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
 
-# === 3. 专属代理服务（Gemini 必须在 AI 和 直连 之前）===
+# === 3. 专项精准代理服务（特定垂直业务优先判定，防止被泛规则截流）===
 ruleset=👽 Gemini,https://raw.githubusercontent.com/goalxin/ownclash/refs/heads/main/list/Gemini.list
 ruleset=👽 AI,https://raw.githubusercontent.com/goalxin/ownclash/refs/heads/main/list/AI.list
-ruleset=🚀 强制代理,https://raw.githubusercontent.com/goalxin/ownclash/refs/heads/main/list/ProxyList
 ruleset=👯‍♂️ TikTok,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.list
 ruleset=📲 电报信息,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
-ruleset=📢 谷歌FCM,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
 ruleset=🌍 国外媒体,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+ruleset=📢 谷歌FCM,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
 ruleset=Ⓜ️ 微软服务,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
 ruleset=🍎 苹果服务,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
 
-# === 4. 国内直连域名与服务增强（国内媒体、特权域名及全量域名库）===
+# === 4. 泛代理规则（补充常规海外服务）===
+ruleset=🚀 强制代理,https://raw.githubusercontent.com/goalxin/ownclash/refs/heads/main/list/ProxyList
+
+# === 5. 国内域名与流媒体直连（在专属代理判定后，优先将大陆业务分流出外网）===
 ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
-ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
 ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list
 ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
 
-# === 5. 国内 IP / GEOIP 直连（IP 与 CIDR 增强直连）===
+# === 6. 国内 IP / GEOIP 直连（IP 兜底直连）===
 ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
 ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list
 ruleset=🎯 全球直连,[]GEOIP,CN
 
-# === 6. 兜底代理（其余所有未命中规则走代理节点）===
+# === 7. 境外 GFW 拦截名单与兜底代理 ===
+; GFW 明确封锁的域名走“节点选择”，确保冷门境外站点由手动/指定节点接管
+ruleset=🚀 节点选择,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list
 ruleset=🚀 节点选择,https://raw.githubusercontent.com/goalxin/ownclash/refs/heads/main/list/ProxyAiter.list
 ruleset=🐟 漏网之鱼,[]FINAL
 
@@ -75,7 +78,7 @@ custom_proxy_group=负载-会话保持`load-balance-consistent-hashing`[]负载-
 custom_proxy_group=指定负载A`select`.*
 custom_proxy_group=指定负载B`select`.*
 
-; 自动优选单节点（原 自动-负载均衡，url-test 自动切换最低延迟节点）
+; 自动优选单节点（所有代理业务的开箱即用保底通道）
 custom_proxy_group=自动节点`url-test`(ion|ION|CF|电信|优选|cc|ccla|CC|CCLA|ll|LL)`http://www.gstatic.com/generate_204`180,50
 
 ; ================= 4. 15个独立手动选择池 =================
