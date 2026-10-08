@@ -8,6 +8,8 @@
 ;增强负载架构：支持
 
 # === 1. 广告与净化拦截（最高优先级）===
+; 阻断 QUIC (UDP 443)，强制移动端回退至 TCP 解决播放死锁
+ruleset=🛑 全球拦截,[]AND,((DEST-PORT,443),(NETWORK,UDP))
 ruleset=🛑 全球拦截,https://raw.githubusercontent.com/goalxin/ownclash/refs/heads/main/list/BanAD
 ruleset=🍃 应用净化,https://raw.githubusercontent.com/goalxin/ownclash/refs/heads/main/list/ProgramBlock.list
 
@@ -17,6 +19,7 @@ ruleset=🎯 全球直连,https://raw.githubusercontent.com/goalxin/ownclash/ref
 ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
 
 # === 3. 专项精准代理服务 ===
+ruleset=🎬 YouTube,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list
 ruleset=👽 Gemini,https://raw.githubusercontent.com/goalxin/ownclash/refs/heads/main/list/Gemini.list
 ruleset=👽 AI,https://raw.githubusercontent.com/goalxin/ownclash/refs/heads/main/list/AI.list
 ruleset=👯‍♂️ TikTok,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.list
@@ -48,6 +51,9 @@ ruleset=🐟 漏网之鱼,[]FINAL
 custom_proxy_group=🍃 应用净化`select`[]REJECT`[]DIRECT
 custom_proxy_group=🛑 全球拦截`select`[]REJECT`[]DIRECT
 
+; YouTube 独立策略组：排除轮询负载，锁定单节点优选或哈希以避免播放 403
+custom_proxy_group=🎬 YouTube`select`[]自动节点`[]CF-哈希负载`[]CC-负载均衡`[]手动负载均衡-哈希`[]香港-自动`[]台湾-自动`[]日本-自动`[]新加坡-自动`[]美国-自动`[]DIRECT`[]REJECT
+
 custom_proxy_group=🎯 全球直连`select`[]DIRECT`[]自动节点`[]CF-哈希负载`[]ION-负载均衡`[]LL-负载均衡`[]CC-负载均衡`[]手动负载均衡-哈希`[]指定负载A`[]指定负载B`[]香港-自动`[]台湾-自动`[]日本-自动`[]新加坡-自动`[]美国-自动`[]REJECT
 custom_proxy_group=👽 Gemini`select`[]自动节点`[]CF-哈希负载`[]ION-负载均衡`[]LL-负载均衡`[]CC-负载均衡`[]DIRECT`[]手动负载均衡-哈希`[]指定负载A`[]指定负载B`[]香港-自动`[]台湾-自动`[]日本-自动`[]新加坡-自动`[]美国-自动`[]REJECT
 custom_proxy_group=👽 AI`select`[]自动节点`[]CF-哈希负载`[]ION-负载均衡`[]LL-负载均衡`[]CC-负载均衡`[]DIRECT`[]手动负载均衡-哈希`[]指定负载A`[]指定负载B`[]香港-自动`[]台湾-自动`[]日本-自动`[]新加坡-自动`[]美国-自动`[]REJECT
@@ -62,16 +68,16 @@ custom_proxy_group=🚀 节点选择`select`[]自动节点`[]CF-哈希负载`[]I
 custom_proxy_group=🐟 漏网之鱼`select`[]自动节点`[]CF-哈希负载`[]ION-负载均衡`[]LL-负载均衡`[]CC-负载均衡`[]DIRECT`[]手动负载均衡-哈希`[]指定负载A`[]指定负载B`[]香港-自动`[]台湾-自动`[]日本-自动`[]新加坡-自动`[]美国-自动`[]REJECT
 
 ; ================= 3. 负载均衡池与指定负载 =================
-; CF 优选 5 通道一致性哈希负载均衡
+; CF 优选 5 通道一致性哈希
 custom_proxy_group=CF-哈希负载`load-balance`[]CF-优选01`[]CF-优选02`[]CF-优选03`[]CF-优选04`[]CF-优选05`http://www.gstatic.com/generate_204`180,50,,consistent-hashing
 
-; ION 5 通道动态最快 - 并发轮询（同 IP 多端口，吞吐性能最大化）
+; ION 5 通道动态最快 - 并发轮询（同 IP 多端口）
 custom_proxy_group=ION-负载均衡`load-balance`[]ION-优选01`[]ION-优选02`[]ION-优选03`[]ION-优选04`[]ION-优选05`http://www.gstatic.com/generate_204`180,50
 
-; LL 5 通道动态最快 - 并发轮询（同 IP 多端口，吞吐性能最大化）
+; LL 5 通道动态最快 - 并发轮询（同 IP 多端口）
 custom_proxy_group=LL-负载均衡`load-balance`[]LL-优选01`[]LL-优选02`[]LL-优选03`[]LL-优选04`[]LL-优选05`http://www.gstatic.com/generate_204`180,50
 
-; CC 5 通道动态最快 - 一致性哈希（不同 IP 维持连接出口稳定）
+; CC 5 通道动态最快 - 一致性哈希（不同 IP 会话保持）
 custom_proxy_group=CC-负载均衡`load-balance`[]CC-优选01`[]CC-优选02`[]CC-优选03`[]CC-优选04`[]CC-优选05`http://www.gstatic.com/generate_204`180,50,,consistent-hashing
 
 ; 手动指定 1-5 节点：一致性哈希
