@@ -10,6 +10,16 @@ DOMAIN-SUFFIX,tkgxfc.top
 
 # Wikipedia 走确定代理
 DOMAIN-SUFFIX,digvps.com
+DOMAIN-SUFFIX,cloudflare.com
+
+# 移动端专用 API 与认证核心
+DOMAIN,youtubei.googleapis.com
+DOMAIN-SUFFIX,yt.be
+DOMAIN,yt3.ggpht.com
+DOMAIN,yt4.ggpht.com
+DOMAIN-SUFFIX,youtube-nocookie.com
+DOMAIN-KEYWORD,youtubemobile
+DOMAIN-KEYWORD,youtubeembeddedplayer
 
 # Wikipedia 维基相关域名
 DOMAIN-SUFFIX,mediawiki.org
