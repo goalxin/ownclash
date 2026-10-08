@@ -27,7 +27,10 @@ DOMAIN,content-georouting.googleapis.com
 DOMAIN,waa-pa.clients6.google.com
 
 # === Gemini App 测试覆盖 ===
-DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,generativelanguage.googleapis.com
+DOMAIN,alkalimakersuite-pa.clients6.google.com
+# 移除所有针对整个 googleusercontent.com 的泛后缀匹配
+# DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,clients6.google.com
 
 # === 静态资源 ===
