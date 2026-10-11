@@ -1,0 +1,76 @@
+;acl4SSR规则-HTLA/CCHT/H66Y极客定制版
+;去广告：支持
+;自动测速：支持
+;微软分流：支持
+;苹果分流：支持
+;增强中国IP段：支持
+;增强国外GFW：支持
+
+# === 1. 广告与净化拦截（最高优先级）===
+ruleset=🛑 全球拦截,https://raw.githubusercontent.com/goalxin/ownclash/refs/heads/main/list/BanAD
+ruleset=🍃 应用净化,https://raw.githubusercontent.com/goalxin/ownclash/refs/heads/main/list/ProgramBlock.list
+
+# === 2. 本地局域网与无条件放行 ===
+ruleset=🎯 全球直连,https://raw.githubusercontent.com/goalxin/ownclash/refs/heads/main/list/UnBan
+ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+
+# === 3. 专项精准代理服务 ===
+ruleset=🚀 强制代理,https://raw.githubusercontent.com/goalxin/ownclash/refs/heads/main/list/ProxyList
+ruleset=👽 Gemini,https://raw.githubusercontent.com/goalxin/ownclash/refs/heads/main/list/Gemini.list
+ruleset=👽 AI,https://raw.githubusercontent.com/goalxin/ownclash/refs/heads/main/list/AI.list
+ruleset=👯‍♂️ TikTok,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.list
+ruleset=📲 电报信息,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+ruleset=🌍 国外媒体,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+ruleset=📢 谷歌FCM,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
+ruleset=Ⓜ️ 微软服务,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
+ruleset=🍎 苹果服务,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
+
+# === 4. 国内域名与流媒体直连 ===
+ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list
+ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+
+# === 5. 国内 IP / GEOIP 直连 ===
+ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list
+ruleset=🎯 全球直连,[]GEOIP,CN
+
+# === 6. 境外 GFW 拦截名单与兜底代理 ===
+ruleset=🚀 节点选择,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list
+ruleset=🐟 漏网之鱼,[]FINAL
+
+; ================= 1. 业务分流策略组 =================
+custom_proxy_group=🍃 应用净化`select`[]REJECT`[]DIRECT`.*
+custom_proxy_group=🛑 全球拦截`select`[]REJECT`[]DIRECT`.*
+
+custom_proxy_group=🎯 全球直连`select`[]DIRECT`[]🚀 全局最快`[]⚡ HTLA-自动`[]⚡ CCHT-自动`[]⚡ H66Y-自动`[]REJECT
+custom_proxy_group=🚀 强制代理`select`[]🚀 全局最快`[]⚡ HTLA-自动`[]⚡ CCHT-自动`[]⚡ H66Y-自动`[]DIRECT`[]REJECT
+
+custom_proxy_group=👽 Gemini`select`[]🚀 全局最快`[]⚡ HTLA-自动`[]⚡ CCHT-自动`[]⚡ H66Y-自动`[]DIRECT`[]REJECT
+custom_proxy_group=👽 AI`select`[]🚀 全局最快`[]⚡ HTLA-自动`[]⚡ CCHT-自动`[]⚡ H66Y-自动`[]DIRECT`[]REJECT
+
+custom_proxy_group=👯‍♂️ TikTok`select`[]🚀 全局最快`[]⚡ HTLA-自动`[]⚡ CCHT-自动`[]⚡ H66Y-自动`[]DIRECT`[]REJECT
+custom_proxy_group=📲 电报信息`select`[]🚀 全局最快`[]⚡ HTLA-自动`[]⚡ CCHT-自动`[]⚡ H66Y-自动`[]DIRECT`[]REJECT
+custom_proxy_group=Ⓜ️ 微软服务`select`[]DIRECT`[]🚀 全局最快`[]⚡ HTLA-自动`[]⚡ CCHT-自动`[]⚡ H66Y-自动`[]REJECT
+custom_proxy_group=🌍 国外媒体`select`[]🚀 全局最快`[]⚡ HTLA-自动`[]⚡ CCHT-自动`[]⚡ H66Y-自动`[]DIRECT`[]REJECT
+custom_proxy_group=📢 谷歌FCM`select`[]DIRECT`[]🚀 全局最快`[]⚡ HTLA-自动`[]⚡ CCHT-自动`[]⚡ H66Y-自动`[]REJECT
+custom_proxy_group=🍎 苹果服务`select`[]DIRECT`[]🚀 全局最快`[]⚡ HTLA-自动`[]⚡ CCHT-自动`[]⚡ H66Y-自动`[]REJECT
+
+custom_proxy_group=🚀 节点选择`select`[]🚀 全局最快`[]⚡ HTLA-自动`[]⚡ CCHT-自动`[]⚡ H66Y-自动`[]DIRECT`[]REJECT
+custom_proxy_group=🐟 漏网之鱼`select`[]🚀 全局最快`[]⚡ HTLA-自动`[]⚡ CCHT-自动`[]⚡ H66Y-自动`[]DIRECT`[]REJECT
+
+; ================= 2. 自动测速通道池 =================
+; 全局所有节点测速：选出所有节点中最快的一个（60秒一次，容差30ms）
+custom_proxy_group=🚀 全局最快`url-test`(?i)(HTLA|CCHT|H66Y)`http://www.gstatic.com/generate_204`60,30,2000
+
+; HTLA 独立优选
+custom_proxy_group=⚡ HTLA-自动`url-test`(?i)HTLA`http://www.gstatic.com/generate_204`60,30,2000
+
+; CCHT 独立优选
+custom_proxy_group=⚡ CCHT-自动`url-test`(?i)CCHT`http://www.gstatic.com/generate_204`60,30,2000
+
+; H66Y 独立优选
+custom_proxy_group=⚡ H66Y-自动`url-test`(?i)H66Y`http://www.gstatic.com/generate_204`60,30,2000
+
+enable_rule_generator=true
+overwrite_original_rules=true
