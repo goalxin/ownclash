@@ -101,11 +101,11 @@ custom_proxy_group=LL-优选04`fallback`(ll|LL)`http://www.gstatic.com/generate_
 custom_proxy_group=LL-优选05`url-test`(ll|LL)`http://www.gstatic.com/generate_204`60,100,2000
 
 ; CC 优选 5 通道
-custom_proxy_group=CC-优选01`url-test`(HY2)`http://www.gstatic.com/generate_204`30,15,2000
-custom_proxy_group=CC-优选02`url-test`(HY2)`http://www.gstatic.com/generate_204`45,30,2000
-custom_proxy_group=CC-优选03`url-test`(HY2)`http://www.gstatic.com/generate_204`60,50,2000
-custom_proxy_group=CC-优选04`fallback`(HY2)`http://www.gstatic.com/generate_204`30,,2000
-custom_proxy_group=CC-优选05`url-test`(HY2)`http://www.gstatic.com/generate_204`60,100,2000
+custom_proxy_group=CC-优选01`url-test`(CC-HY2)`http://www.gstatic.com/generate_204`30,15,2000
+custom_proxy_group=CC-优选02`url-test`(CC-HY2)`http://www.gstatic.com/generate_204`45,30,2000
+custom_proxy_group=CC-优选03`url-test`(CC-HY2)`http://www.gstatic.com/generate_204`60,50,2000
+custom_proxy_group=CC-优选04`fallback`(CC-HY2)`http://www.gstatic.com/generate_204`30,,2000
+custom_proxy_group=CC-优选05`url-test`(CC-HY2)`http://www.gstatic.com/generate_204`60,100,2000
 
 ; ================= 6. 地区自动组（JP 特别优化） =================
 custom_proxy_group=香港-自动`url-test`(广港|香港|HK|Hong Kong|🇭🇰|HongKong)`http://www.gstatic.com/generate_204`45,30,2000
